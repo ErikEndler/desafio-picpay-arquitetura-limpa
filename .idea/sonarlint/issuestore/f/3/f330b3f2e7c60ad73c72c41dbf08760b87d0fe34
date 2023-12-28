@@ -1,0 +1,9 @@
+
+E
+java:S5411"(Use a primitive boolean expression here.(£Óœ«8Õ–ÚË1
+_
+java:S6353"=Use concise character class syntax '\\D' instead of '[^0-9]'.(—·ÎÉşÿÿÿÿ8Ü—ÚË1
+_
+java:S6353"=Use concise character class syntax '\\D' instead of '[^0-9]'.(—·ÎÉşÿÿÿÿ8İ—ÚË1
+`
+java:S1854H">Remove this useless assignment to local variable "firstDigit".(Şâ¨ûÿÿÿÿ8å—ÚË1
