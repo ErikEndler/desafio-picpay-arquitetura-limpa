@@ -1,7 +1,7 @@
 package br.com.desafio.core.domain;
 
 import br.com.desafio.core.domain.enums.UserTypeEnum;
-import br.com.desafio.core.exception.TransferExcption;
+import br.com.desafio.core.exception.TransferException;
 import br.com.desafio.core.exception.enums.ErrorCodeEnum;
 
 import java.math.BigDecimal;
@@ -48,12 +48,12 @@ public class Wallet {
         this.balance.add(value);
     }
 
-    public void transfer(BigDecimal value) throws TransferExcption {
+    public void transfer(BigDecimal value) throws TransferException {
         if (this.user.getType().equals(UserTypeEnum.SHOPKEEPER)) {
-            throw new TransferExcption(ErrorCodeEnum.TR0001.getMessage(), ErrorCodeEnum.TR0001.getCode());
+            throw new TransferException(ErrorCodeEnum.TR0001.getMessage(), ErrorCodeEnum.TR0001.getCode());
         }
         if (this.balance.compareTo(value) < 0) {
-            throw new TransferExcption(ErrorCodeEnum.TR0002.getMessage(), ErrorCodeEnum.TR0002.getCode());
+            throw new TransferException(ErrorCodeEnum.TR0002.getMessage(), ErrorCodeEnum.TR0002.getCode());
         }
         this.balance.subtract(value);
     }

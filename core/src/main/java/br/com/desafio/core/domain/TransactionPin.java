@@ -1,6 +1,6 @@
 package br.com.desafio.core.domain;
 
-import br.com.desafio.core.exception.TransactionPinExcption;
+import br.com.desafio.core.exception.TransactionPinException;
 import br.com.desafio.core.exception.enums.ErrorCodeEnum;
 
 import java.time.LocalDateTime;
@@ -56,14 +56,14 @@ public class TransactionPin {
         return pin;
     }
 
-    public void setPin(String pin) throws TransactionPinExcption {
+    public void setPin(String pin) throws TransactionPinException {
         pinIsValid(pin);
         this.pin = pin;
     }
 
-    private void pinIsValid(String pin) throws TransactionPinExcption {
+    private void pinIsValid(String pin) throws TransactionPinException {
         if (pin.length() != 8)
-            throw new TransactionPinExcption(ErrorCodeEnum.TRP0001.getMessage(), ErrorCodeEnum.TRP0001.getCode());
+            throw new TransactionPinException(ErrorCodeEnum.TRP0001.getMessage(), ErrorCodeEnum.TRP0001.getCode());
     }
 
     public Integer getAttempt() {

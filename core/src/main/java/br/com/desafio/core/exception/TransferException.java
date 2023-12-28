@@ -1,9 +1,9 @@
 package br.com.desafio.core.exception;
 
-public class TransactionPinExcption extends Exception {
+public class TransferException extends Exception {
     private String code;
 
-    public TransactionPinExcption(String message, String code) {
+    public TransferException(String message, String code) {
         super(message);
         this.code = code;
     }
